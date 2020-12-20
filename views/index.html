@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ChatBot Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body style="padding:0px;margin:0px;">
+<div style="padding:40px">
+    <h1>ChatBot Example</h1>
+    <p> A small chat bot using DialogFlow</p>
+</div>
+<script src="https://riversun.github.io/chatux/chatux.min.js"></script>
+<script>
+
+    const chatux = new ChatUx();
+
+    const opt = {
+        api: {
+            //URL of chat server
+            endpoint: 'http://localhost:3000/chat',
+            //HTTP METHOD
+            method: 'POST',
+            //DATA TYPE
+            dataType: 'json'
+        },
+        window: {
+            title: 'My chat',
+            infoUrl: 'imayank.me'
+        }
+    };
+
+    //initialize
+    chatux.init(opt);
+    chatux.start(true);
+
+</script>
+</body>
+</html>
