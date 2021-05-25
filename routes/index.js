@@ -3,7 +3,7 @@ var router = express.Router();
 const fetch = require('node-fetch');
 
 /* GET home page. */
-router.post('/', function(req, res, next) {
+router.post('/', function (req, res, next) {
   let fetchResponse;
 
   //Input text from chatBot
@@ -18,8 +18,8 @@ router.post('/', function(req, res, next) {
   };
 
   //send inputtext to backend and get response from dialogflow
-  fetch('http://ec2-18-219-239-180.us-east-2.compute.amazonaws.com/api/get-diag-res', { 
-    method: 'POST', 
+  fetch('https://imayank.me/chatApp/get-diag-res', {
+    method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ router.post('/', function(req, res, next) {
         type: 'text',
         value: fetchResponse || null
       });
-      
+
       //send output
       res.json(response);
 
